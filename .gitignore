@@ -17,3 +17,10 @@
 /win-pc-control.iml
 !/vendor/vendor.json
 /vendor/
+!/win10bin/monitor-control-off.exe
+!/win10bin/shutdown_now.exe
+!/win10bin/media_control.exe
+!/win10bin/win_control_server.exe
+!/win10bin/monitor-control-on.exe
+!/win10bin/volume.exe
+!/win10bin/shutdown_now.bat
