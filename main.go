@@ -11,6 +11,8 @@ func main() {
 
 	//静态网页的处理
 	router.Static("/home", "./home")
+	router.Static("/static", "./static")
+
 	router.GET("/api/hello", func(c *gin.Context) {
 		c.String(200, "api hello")
 	})
