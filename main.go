@@ -1,11 +1,10 @@
 package main
 
 import (
-	"compress/gzip"
 	"fmt"
 	"github.com/braintree/manners"
-	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/gzip"
+	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
