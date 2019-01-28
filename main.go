@@ -1,3 +1,6 @@
+// win-pc-control
+// 电脑媒体控制程序
+// 2019年1月25日20:48:52
 package main
 
 import (
