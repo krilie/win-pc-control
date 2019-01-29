@@ -42,7 +42,7 @@ func SysCtl(action string) error {
 		return winShutdown()
 	case "monitor_on":
 		return winMonitor("on")
-	case "monitor_of":
+	case "monitor_off":
 		return winMonitor("off")
 	default:
 		return errParam
