@@ -11,7 +11,7 @@ import (
 
 // /media/status?action=stop POST
 func MediaStatusPost(c *gin.Context) {
-	action := c.Query("action")
+	action := c.PostForm("action")
 	if action == "" {
 		c.String(http.StatusBadRequest, "请求参数不能为空")
 		return
@@ -25,7 +25,7 @@ func MediaStatusPost(c *gin.Context) {
 
 // /volume/value?value=? POST
 func VolumeValuePost(c *gin.Context) {
-	value := c.Query("value")
+	value := c.PostForm("value")
 	if valueInt, err := strconv.Atoi(value); err != nil {
 		c.String(http.StatusBadRequest, "请求参数错误,不能转为int")
 		return
@@ -47,7 +47,7 @@ func VolumeValuePost(c *gin.Context) {
 
 // /sysctl/action? action=? post shutdown monitor_on monitor_off
 func SysctlActionPost(c *gin.Context) {
-	action := c.Query("action")
+	action := c.PostForm("action")
 	if action == "" {
 		c.String(http.StatusBadRequest, "请求参数不能为空")
 		return

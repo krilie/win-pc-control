@@ -30,7 +30,7 @@ func CheckSecretKey() gin.HandlerFunc {
 //登录
 // auth/login?secret_key=?  Post
 func AuthLogin(c *gin.Context) {
-	key := c.Query("secret_key")
+	key := c.PostForm("secret_key")
 	if key == "" {
 		c.String(http.StatusBadRequest, "请输入secret key")
 		return

@@ -30,7 +30,7 @@ func main() {
 	//登录鉴权
 	authGroup := router.Group("/auth")
 	authGroup.POST("/login", win_control.AuthLogin)
-	authGroup.GET("/verity", win_control.AuthVerity)
+	authGroup.POST("/verity", win_control.AuthVerity)
 
 	//后台api
 	apiGroup := router.Group("/api")
