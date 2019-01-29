@@ -7,6 +7,7 @@ import (
 
 var SecretKey = "12345678"
 var CookieKey = "secret_key"
+var Domain = "192.168.31.237"
 
 // 检验中间件
 func CheckSecretKey() gin.HandlerFunc {
@@ -30,7 +31,7 @@ func CheckSecretKey() gin.HandlerFunc {
 //登录
 // auth/login?secret_key=?  Post
 func AuthLogin(c *gin.Context) {
-	key := c.PostForm("secret_key")
+	key := c.PostForm(CookieKey)
 	if key == "" {
 		c.String(http.StatusBadRequest, "请输入secret key")
 		return
@@ -40,7 +41,7 @@ func AuthLogin(c *gin.Context) {
 		return
 	}
 	//写cookie,并返回200 一个月有效
-	c.SetCookie(CookieKey, SecretKey, 60*60*24*30, "/", "localhost", false, true)
+	c.SetCookie(CookieKey, SecretKey, 60*60*24*30, "/", Domain, false, true)
 	c.Status(http.StatusOK)
 	return
 }
